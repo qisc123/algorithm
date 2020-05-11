@@ -1,5 +1,7 @@
 package com.algorithm;
 
+import java.util.Queue;
+
 public class Graph {
     int MAX_VERTICES = 1000;
     EdgeNode[] edges = new EdgeNode[MAX_VERTICES+1];//邻接信息，就是边的一个固定顶点
@@ -7,6 +9,10 @@ public class Graph {
     int nVertices;
     int nEdges;
     boolean directed;
+
+    boolean[] processed = new boolean[MAX_VERTICES+1];
+    boolean[] discovered = new boolean[MAX_VERTICES+1];
+    int[] parent = new int[MAX_VERTICES+1];
 
     void initializeGraph(Graph graph, boolean directed){
         int i;
@@ -37,14 +43,25 @@ public class Graph {
          graph.edges[x] = edgeNode;   //表头重新指向新插入的边node
          graph.degree[x]++;
 
-         if(directed ==false){
+         if(!directed){
              insertEdge(graph,y,x,true);//若为无向图，再插入一遍
+             //是否要加入一行 graph.nEdges++;不用，在图中，还是只有一条边
          }else{
              graph.nEdges++;
          }
      }
 
+     void initializeSearch(Graph graph){
+         int i;
+         for (i = 1; i <= graph.nVertices; i++){
+             processed[i] = discovered[i] = false;
+             parent[i] = -1;
+         }
+     }
+
      void bfs(Graph graph, int v){
+         Queue q;
+
 
      }
 
