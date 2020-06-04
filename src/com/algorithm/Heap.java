@@ -17,7 +17,7 @@ public class Heap {
         }
 
     }
-    void bubble_up(int[] priority_queue; int x){
+    void bubble_up(int[] priority_queue, int x){
         if(n == 1 ) {
 
         }
