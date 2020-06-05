@@ -31,7 +31,7 @@ class Solution {
         int leftMax = 0;
         int sum = 0;
 
-        for (i = 1; i < height.length -2; i++){
+        for (int i = 1; i < height.length -2; i++){
             if (height[left-1] < height[right+1]){
                 leftMax = Math.max(height[left-1],leftMax);
                 int min = leftMax;
@@ -66,7 +66,7 @@ class Solution {
 //            right[i] = max; //i= length -1时 right[i] = 0
 //        }
         for (int i = height.length-2; i>0; i--){
-            right[i] = Math.max(height[i+1],right[i+1])
+            right[i] = Math.max(height[i+1],right[i+1]);
         }
         int sum =0;
         int leftMax = 0;
@@ -99,11 +99,8 @@ class Solution {
             current++;
         }
         return sum;
-        public static void main(String[] args){
-            // write your code here
-            int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
 
-        }
+
 
 
     }
@@ -111,4 +108,4 @@ class Solution {
 }
     
 
-//leetcode submit region end(Prohibit modification and deletion)
+//leetcode eubmit region end(Prohibit modification and deletion)
